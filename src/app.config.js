@@ -51,7 +51,7 @@ export default {
         "pagePath": "pages/tournament/index",
         "text": "无龄秀场",
         "iconPath": "assets/icons/bar/logo_age.png",
-        "selectedIconPath": "assets/icons/bar/logo_age1.png",
+        "selectedIconPath": "assets/icons/bar/logo_age_active.png",
       }, 
       {
         "pagePath": "pages/mall/index",
