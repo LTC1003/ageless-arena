@@ -19,7 +19,7 @@
       
       <!-- 空状态 -->
       <view v-else-if="activities.length === 0" class="empty">
-        <!-- <image src="/assets/empty.png" class="empty-icon" /> -->
+        <image :src="'@/assets/empty.png'" class="empty-icon" />
         <text class="empty-text">暂无活动</text>
       </view>
       

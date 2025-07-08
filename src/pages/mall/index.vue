@@ -53,7 +53,7 @@
           v-model="searchKeyword"
           @confirm="handleSearch"
         />
-        <!-- <image src="/assets/search.png" class="search-icon"  @click="handleSearch"/> -->
+        <!-- <image src="/assets/search.png" class="search-icon"  @tap="handleSearch"/> -->
       </view>
     </view>
 
@@ -64,7 +64,7 @@
         :key="index"
         class="category-item"
         :class="{ active: activeCategory === category.id }"
-        @click="changeCategory(category.id)"
+        @tap="changeCategory(category.id)"
       >
         {{ category.name }}
       </view>
@@ -84,7 +84,7 @@
           :src="banner.image"
           class="banner-image"
           mode="aspectFill"
-          @click="viewBannerLink(banner.link)"
+          @tap="viewBannerLink(banner.link)"
         />
       </swiper-item>
     </swiper>
@@ -95,7 +95,7 @@
       <view class="section">
         <view class="section-header">
           <text class="section-title">推荐商品</text>
-          <text class="more" @click="viewMore('recommend')">更多</text>
+          <text class="more" @tap="viewMore('recommend')">更多</text>
         </view>
 
         <scroll-view scroll-x class="product-scroll">
@@ -103,7 +103,7 @@
             v-for="(product, index) in recommendedProducts"
             :key="index"
             class="product-card"
-            @click="viewProductDetail(product.id)"
+            @tap="viewProductDetail(product.id)"
           >
             <image
               :src="product.image"
@@ -120,7 +120,7 @@
       <view class="section">
         <view class="section-header">
           <text class="section-title">热销商品</text>
-          <text class="more" @click="viewMore('hot')">更多</text>
+          <text class="more" @tap="viewMore('hot')">更多</text>
         </view>
 
         <view class="product-grid">
@@ -128,7 +128,7 @@
             v-for="(product, index) in hotProducts"
             :key="index"
             class="product-item"
-            @click="viewProductDetail(product.id)"
+            @tap="viewProductDetail(product.id)"
           >
             <image :src="product.image" class="item-image" mode="aspectFill" />
             <text class="item-title">{{ product.title }}</text>
@@ -141,7 +141,7 @@
 
     <!-- 底部导航 -->
     <view class="footer">
-      <view class="cart-icon" @click="viewCart">
+      <view class="cart-icon" @tap="viewCart">
         <!-- <image src="/assets/cart.png" class="icon" /> -->
         <text class="count" v-if="cartCount > 0">{{ cartCount }}</text>
       </view>

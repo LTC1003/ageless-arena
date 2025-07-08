@@ -10,6 +10,8 @@
     "framework": "Vue3"
   },
   "scripts": {
+    "build:prod": "set NODE_ENV=production && taro build --type weapp --watch",
+    "build:dev": "taro build --type weapp", 
     "build:weapp": "taro build --type weapp",
     "build:swan": "taro build --type swan",
     "build:alipay": "taro build --type alipay",

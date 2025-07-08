@@ -6,9 +6,18 @@
 export default {
   pages: [
     'pages/index/index',        // 首页[轮播、公告、分类]
-
+    // 'pages/index/category',     // 分类[分类列表、分类详情]
+    // 'pages/index/activity',     // 活动[活动列表、活动详情]
+    // 'pages/index/search',       // 搜索[搜索结果、搜索历史]
+    // 'pages/index/user',         // 用户[用户信息、用户收藏、用户历史记录]
+    // 'pages/index/signup',       // 报名[报名信息填写、报名确认、报名成功]
     'pages/information/index',  // 资讯[最新赛事、最近活动、赛事排名]
     'pages/information/detail', // 资讯详情
+    // 'pages/information/rank',   // 排行榜[积分排行、签到排行]
+    // 'pages/information/activity',// 活动[活动列表、活动详情]
+    // 'pages/information/rank',   // 排行榜[积分排行、签到排行]
+    // 'pages/information/detail', // 资讯详情
+    'pages/tournament/index',
     // 占位分割符
     'pages/mall/index',         // 商城[积分商城、积分兑换]
     'pages/mall/detail',        // 商城详情
@@ -16,6 +25,7 @@ export default {
     'pages/mall/list',          // 商城列表
     // 占位分割符
     'pages/myInfo/index',       // 个人中心[用户信息、积分、签到、收藏、历史记录]
+    /**bar**/
     // 占位分割符
     'pages/signup/index',       // 报名[报名信息填写、报名确认、报名成功]
     // 'pages/category/index',
@@ -36,6 +46,12 @@ export default {
         "text": "资讯",
         "iconPath": "assets/icons/bar/news.png",
         "selectedIconPath": "assets/icons/bar/news_active.png",
+      }, 
+      {
+        "pagePath": "pages/tournament/index",
+        "text": "无龄秀场",
+        "iconPath": "assets/icons/bar/logo_age.png",
+        "selectedIconPath": "assets/icons/bar/logo_age1.png",
       }, 
       {
         "pagePath": "pages/mall/index",
