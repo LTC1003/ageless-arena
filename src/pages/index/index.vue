@@ -19,19 +19,20 @@
         <text class="banner-title">{{ item.title }}</text>
       </swiper-item>
     </swiper>
-    <!-- 积分兑换区域 -->
+    <!-- 商城的热销商品部分展示 -->
     <view class="integral-exchange-section">
       <text class="section-title">积分兑换</text>
-      <view class="integral-exchange-grid">
+      <!-- 改为可横向滑动的滚动容器 -->
+      <scroll-view class="integral-exchange-scroll" scroll-x="true" enable-flex>
         <view 
           v-for="(item, index) in integralExchange" 
           :key="index"
           class="integral-exchange-item"
           @tap="navigateToActivity(item.id)">
-          <image :src="item.icon" class="integral-exchange-icon" />
+          <image width="200rpx" height="80rpx" :src="item.icon" class="integral-exchange-icon" />
           <text>{{ item.name }}</text>
-        </view> 
-      </view>
+        </view>
+      </scroll-view>
     </view>
     <!-- 活动分类区域 -->
     <view class="category-section">
@@ -83,6 +84,18 @@ const hotActivities = ref([
   { id: 1001, image: bannerDance, title: '银发舞者舞&请向您的舞伴发出邀请' },
   { id: 1002, image: bannerChorus, title: '无龄秀场2025夏季赛制，南京中老年文化宫交响乐' },
   { id: 1003, image: bannerFashion, title: '无龄秀场 2025 届时装秀暨南京中老年文化旅游公益形象大使选拔赛' }
+])
+
+import icon_chorus from '@/assets/icons/icon_chorus.png'
+import icon_fashion from '@/assets/icons/icon_fashion.png'
+import icon_instrument from '@/assets/icons/icon_instrument.png'
+const integralExchange = ref([
+  { id: 2007, price: '¥599', name: '合唱课程', icon: (() => import('@/assets/icons/icon_chorus.png'))},
+  { id: 2001, price: '¥1999', name: '红杉参', icon: icon_chorus},
+  { id: 2002, price: '¥599', name: '机械表', icon: icon_fashion},
+  { id: 2003, price: '¥299', name: '玛丽莲', icon: icon_instrument},
+  // { id: 2008, price: '¥299', name: '时装秀课程', icon: (() => import('@/assets/icons/icon_fashion.png'))},
+  { id: 2004, price: '¥89', name: '抗炎素', icon: () => import('@/assets/icons/icon_instrument.png') },
 ])
 
 // 模拟活动分类数据
@@ -197,6 +210,31 @@ swiper image {
 .category-icon {
   width: 80rpx;
   height: 80rpx;
+  margin-bottom: 10rpx;
+}
+
+/* 添加横向滑动样式 */
+.integral-exchange-scroll {
+  display: flex;
+  white-space: nowrap; /* 防止换行 */
+  padding: 10rpx 0;
+  margin: 0 -15rpx; /* 增加左右间距 */
+}
+
+/* 调整商品项样式实现堆叠效果 */
+.integral-exchange-item {
+  border:1rpx solid #1e1d1a; /* 添加边框 */
+  width: 200rpx; /* 固定高度 */
+  display: inline-flex; /* 改为行内布局 */
+  flex-direction: column;
+  align-items: center;
+  margin: 0 15rpx; /* 增加间距实现堆叠效果 */
+  flex-shrink: 0; /* 防止缩小 */
+}
+
+.integral-exchange-icon {
+  width: 100rpx;
+  height: 100rpx;
   margin-bottom: 10rpx;
 }
 
