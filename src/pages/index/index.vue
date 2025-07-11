@@ -29,8 +29,8 @@
           :key="index"
           class="integral-exchange-item"
           @tap="navigateToActivity(item.id)">
-          <image width="200rpx" height="80rpx" :src="item.icon" class="integral-exchange-icon" />
-          <text>{{ item.name }}</text>
+          <image :src="item.icon" class="integral-exchange-icon" />
+          <text class="integral-exchange-name">{{ item.name }}</text>
         </view>
       </scroll-view>
     </view>
@@ -224,16 +224,23 @@ swiper image {
 /* 调整商品项样式实现堆叠效果 */
 .integral-exchange-item {
   border:1rpx solid #1e1d1a; /* 添加边框 */
-  width: 200rpx; /* 固定高度 */
+  width: 200rpx; 
+  height: 260rpx;/* 固定高度 */
   display: inline-flex; /* 改为行内布局 */
   flex-direction: column;
   align-items: center;
   margin: 0 15rpx; /* 增加间距实现堆叠效果 */
   flex-shrink: 0; /* 防止缩小 */
 }
+.integral-exchange-name {
+  font-size: 28rpx;
+  color: #333;
+  text-align: center;
+  margin-top: 10rpx;
+}
 
 .integral-exchange-icon {
-  width: 100rpx;
+  width: 200rpx;
   height: 100rpx;
   margin-bottom: 10rpx;
 }
